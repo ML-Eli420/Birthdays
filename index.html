@@ -41,24 +41,23 @@
           <input type="password" id="password" required>
         </div>
         <button type="submit">Submit</button>
-      </form>      
+      </form>   
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script>
-      const form = document.getElementById("login-form");
+ document.getElementById("login-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
 
-form.addEventListener("submit", function(event) {
-  event.preventDefault();
-
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
-
-  if (password === "a7b5h9") {
-    window.location.href = "LoggedIn.html";
-  }
-});
-
+    if (password === "a7b5h9") {
+      localStorage.setItem("authenticated", true);
+      window.location.href = "LoggedIn.html";
+    } else {
+      alert("Incorrect username or password");
+    }
+  });
     </script>
   </body>
 </html>

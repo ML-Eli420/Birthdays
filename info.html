@@ -22,19 +22,25 @@
             <a class="nav-link" href="#">Info <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#">(Coming Soon...)</a>
+            <a class="nav-link" href="/Countdown.html">Birthday Countdown</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#">(Coming Soon...)</a>
+            <a class="nav-link disabled" href="/BirthdayPage.html">Birthday</a>
           </li>
         </ul>
       </div>
     </nav>
     <div class="container my-5">
-        <h2>This Website will be used for birthdays!</h2>
-     
+        <h2>This Website will be used for birthday Surprises and Countdowns!</h2>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+      const authenticated = localStorage.getItem("authenticated");
+
+if (authenticated !== "true") {
+  window.location.href = "index.html";
+}
+    </script>
   </body>
 </html>
