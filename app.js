@@ -13,6 +13,12 @@ function PopUp(text) {
     popup.remove();
   });
 
+  popup.addEventListener("click", function(event) {
+    if (event.target === popup) {
+      popup.remove();
+    }
+  });
+
   document.body.appendChild(popup);
 }
 
